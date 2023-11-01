@@ -29,8 +29,16 @@ const SignUp = () => {
     },
   });
 
+    // 2. Define a submit handler.
+  // async  function onSubmit(values: z.infer<typeof formSchema>) {
+  //     // Do something with the form values.
+  //     // ✅ This will be type-safe and validated.
+  //       // const newUser = await 
+  //   }
+  
+
   return (
-    <Form {...form}>
+    <Form {...form} >
       <div className={styles.account_container}>
         <div className={styles.account}>
           <img src={accLogo} alt="" className={styles.logo} />
@@ -46,7 +54,7 @@ const SignUp = () => {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel >Name</FormLabel>
                 <FormControl>
                   <Input type="text" className={styles.input_v} {...field} />
                 </FormControl>
@@ -60,7 +68,7 @@ const SignUp = () => {
             name="username"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Username</FormLabel>
+                <FormLabel className='mt-2'>Username</FormLabel>
                 <FormControl>
                   <Input type="text" className={styles.input_v} {...field} />
                 </FormControl>
@@ -74,7 +82,7 @@ const SignUp = () => {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel className='mt-4'>Email</FormLabel>
                 <FormControl>
                   <Input type="email" className={styles.input_v} {...field} />
                 </FormControl>
@@ -88,7 +96,7 @@ const SignUp = () => {
             name="password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Password</FormLabel>
+                <FormLabel className='mt-2'>Password</FormLabel>
                 <FormControl>
                   <Input
                     type="password"
@@ -113,7 +121,7 @@ const SignUp = () => {
           </Button>
           <div className={`flex justify-center items-center gap-2 py-2 ${styles.account_type}`}>
             <p className="text-center mt-1">Already have an account?</p>
-            <Link to='/sign-in' className="ml-1 mt-1">
+            <Link to='/sign-in' className="ml-1 mt-1" style={{color:'navy'}}>
                Log in
             </Link>
           </div>

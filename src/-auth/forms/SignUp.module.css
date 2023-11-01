@@ -51,5 +51,7 @@
  @media (max-width:770px) {
     .account_container {
         margin: 6.5rem 0 0 3rem;
+        padding: 0 0;
+        justify-content: center;
     }
  }
