@@ -68,7 +68,7 @@ const SignUp = () => {
             name="username"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className='mt-2'>Username</FormLabel>
+                <FormLabel className='py-8'>Username</FormLabel>
                 <FormControl>
                   <Input type="text" className={styles.input_v} {...field} />
                 </FormControl>
@@ -82,7 +82,7 @@ const SignUp = () => {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className='mt-4'>Email</FormLabel>
+                <FormLabel className=' py-6'>Email</FormLabel>
                 <FormControl>
                   <Input type="email" className={styles.input_v} {...field} />
                 </FormControl>
@@ -96,7 +96,7 @@ const SignUp = () => {
             name="password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className='mt-2'>Password</FormLabel>
+                <FormLabel className='py-8'>Password</FormLabel>
                 <FormControl>
                   <Input
                     type="password"
