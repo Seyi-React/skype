@@ -38,7 +38,7 @@ const SignUp = () => {
   
 
   return (
-    <Form {...form} >
+    <Form {...form}  >
       <div className={styles.account_container}>
         <div className={styles.account}>
           <img src={accLogo} alt="" className={styles.logo} />
@@ -109,14 +109,14 @@ const SignUp = () => {
               </FormItem>
             )}
           />
-          <Button type="submit" className="mt-5">
+          <Button type="submit" className="mt-5 w-full">
             {isLoad ? (
               <div className="flex justify-start flex-row items-center gap-2">
                 <Loader />
                 <p>Loading......</p>
               </div>
             ) : (
-              <p>Sign Up</p>
+              <p className="sign_text">Sign Up</p>
             )}
           </Button>
           <div className={`flex justify-center items-center gap-2 py-2 ${styles.account_type}`}>

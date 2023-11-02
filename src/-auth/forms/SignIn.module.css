@@ -1,7 +1,9 @@
- .create_account {
+
+
+.account_now{
     /* font-family: system-ui; */
     font-weight: 600;
-    font-size: 18px;
+    font-size: 22px;
     font-family: 'Jost', sans-serif;
     letter-spacing: 1px;
  }
@@ -22,7 +24,7 @@
     
  }
  .logo {
-      height: 140px;
+      height: 130px;
     padding: 2rem 0;
  }
  .skype {
