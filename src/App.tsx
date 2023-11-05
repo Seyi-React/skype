@@ -3,7 +3,7 @@ import SignInForm from "./-auth/forms/SignInForm";
 import { Home } from "./-root/pages";
 import SignUp from "./-auth/forms/SignUp";
 import AuthLayout from "./-auth/AuthLayout";
-import RootLayout from "./-root/RootLayout";
+// import RootLayout from "./-root/RootLayout";
 
 const App: React.FC = () => {
   return (
@@ -17,10 +17,10 @@ const App: React.FC = () => {
           </Route>
 
           {/* Private routes */}
-          <Route element={<RootLayout />}>
+          {/* <Route element={<RootLayout />}> */}
             <Route
              index element={<Home />} />
-          </Route>
+          {/* </Route> */}
         </Routes>
       </main>
     </>

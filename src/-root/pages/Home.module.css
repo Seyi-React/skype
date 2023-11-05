@@ -1,0 +1,26 @@
+.sidebar {
+  height: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  background-color: #fff;
+}
+
+.sidebar_content {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.mobile_parent {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    display: none;
+  }
+  .mobile_parent {
+    display: unset;
+    width: 100% !important;
+  }
+}

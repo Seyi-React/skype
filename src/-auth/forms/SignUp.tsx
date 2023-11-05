@@ -63,7 +63,7 @@ const SignUp = () => {
               </FormItem>
             )}
           />
-          <FormField
+          {/* <FormField
             control={form.control}
             name="username"
             render={({ field }) => (
@@ -76,7 +76,7 @@ const SignUp = () => {
                 <FormMessage />
               </FormItem>
             )}
-          />
+          /> */}
           <FormField
             control={form.control}
             name="email"
