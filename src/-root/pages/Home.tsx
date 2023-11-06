@@ -11,13 +11,23 @@ import TrendsComponent from "@/components/Trends/TrendsComponent";
 import SavedPostComponent from "@/components/Saved/SavedPostComponent";
 import PostComponent from "@/components/Post/PostComponent";
 import ExploreComponent from "@/components/Explore/ExploreComponent";
+import HomeRoute from "./Home/HomeRoute";
+import Trending from "./Trending/Trending";
+import Save from "./Save/Save";
+import Explore from "./Explore/Explore";
+import PostAdd from "./PostAdd/PostAdd";
 
 const Home = (): JSX.Element => {
   const [toggleSideBar, setToggleSidebar] = useState<boolean>(false);
   const [activeItem, setActiveItem] = useState<string | null>(null);
+  const [activeComponent, setActiveComponent] = useState<string>("Feed");
 
   const handleSideFunction = () => {
     setToggleSidebar(!toggleSideBar);
+  };
+
+  const navigateToComponent = (component: string) => {
+    setActiveComponent(component);
   };
 
   const handleItemClick = (item: string) => {
@@ -209,8 +219,6 @@ const Home = (): JSX.Element => {
                   alignItems: "center",
                   margin: "2rem",
                   gap: "10px",
-                  // paddingTop: "1rem",
-                  // background: activeItem === "Log Out" ? "navy" : "",
                   borderRadius: "10px",
                   padding: "8px",
                 }}
@@ -223,14 +231,15 @@ const Home = (): JSX.Element => {
               </div>
             </div>
           </div>
+
+          <main className={styles.main}>
+            {activeItem === "Home" && <HomeComponent />}
+            {activeItem === "Trends" && <TrendsComponent />}
+            {activeItem === " Saved Post" && <SavedPostComponent />}
+            {activeItem === "Post" && <PostComponent />}
+            {activeItem === "Explore" && <ExploreComponent />}
+          </main>
         </div>
-        <main className={styles.main}>
-          {activeItem === "Home" && <HomeComponent />}
-          {activeItem === "Trends" && <TrendsComponent />}
-          {activeItem === "Saved Post" && <SavedPostComponent />}
-          {activeItem === "Post" && <PostComponent />}
-          {activeItem === "Explore" && <ExploreComponent />}
-        </main>
       </>
 
       {/* Mobile dashboard */}
@@ -243,8 +252,6 @@ const Home = (): JSX.Element => {
               justifyContent: "space-between",
               alignItems: "center",
               paddingRight: "2rem",
-              // backgroundColor:'greenyellow',
-              // boxShadow:''
             }}
           >
             <div
@@ -281,6 +288,82 @@ const Home = (): JSX.Element => {
               <small>
                 <MdNotifications size={30} style={{ marginTop: "15px" }} />
               </small>
+            </div>
+          </div>
+          {/*  reendered on screen */}
+          <div className="main-content">
+            {activeComponent === "HomeRoute" && <HomeRoute />}
+            {activeComponent === "Trending" && <Trending />}
+            {activeComponent === "Save" && <Save />}
+            {activeComponent === "ExploreIt" && <Explore />}
+            {activeComponent === "PostAdd" && <PostAdd />}
+          </div>
+
+          {/* bottom bar */}
+          <div className={styles.bottom_bar}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-around",
+                alignItems: "center",
+                padding: "2rem",
+                position: "fixed",
+                bottom: 0,
+                left: 0,
+                width: "100%",
+                background: "white",
+              }}
+            >
+              <BiHomeAlt2
+                size={24}
+                onClick={() => navigateToComponent("HomeRoute")}
+                style={{
+                  color: activeComponent === "HomeRoute" ? "white" : "",
+                  background: activeComponent === "HomeRoute" ? "navy" : "",
+                  borderRadius: "10px",
+                  width:'100%'
+                }}
+              />
+              <BiTrendingUp
+                size={24}
+                onClick={() => navigateToComponent("Trending")}
+                style={{
+                  color: activeComponent === "Trending" ? "white" : "",
+                  background: activeComponent === "Trending" ? "navy" : "",
+                  borderRadius: "10px",
+                  width:'100%'
+                }}
+              />
+              <AiFillSave
+                size={24}
+                onClick={() => navigateToComponent("Save")}
+                style={{
+                  color: activeComponent === "Save" ? "white" : "",
+                  background: activeComponent === "Save" ? "navy" : "",
+                  borderRadius: "10px",
+                  width:'100%'
+                }}
+              />
+              <MdExplore
+                size={24}
+                onClick={() => navigateToComponent("ExploreIt")}
+                style={{
+                  color: activeComponent === "ExploreIt" ? "white" : "",
+                  background: activeComponent === "ExploreIt" ? "navy" : "",
+                  borderRadius: "10px",
+                  width:'100%'
+                }}
+              />
+              <MdOutlinePostAdd
+                size={24}
+                onClick={() => navigateToComponent("PostAdd")}
+                style={{
+                  color: activeComponent === "PostAdd" ? "white" : "",
+                  background: activeComponent === "PostAdd" ? "navy" : "",
+                  borderRadius: "10px",
+                  width:'100%',
+                }}
+              />
             </div>
           </div>
         </div>

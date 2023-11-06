@@ -16,18 +16,23 @@
 }
 .container {
   display: flex;
+  
 }
 .main {
   flex-grow: 1; /* Allow the main content to grow and take available space */
-  padding: 20px; /* Add padding or styles to the main content as needed */
+   position: absolute;
+   z-index: 1;
+   margin-left: auto;/* Add padding or styles to the main content as needed */
 }
 
 @media (max-width: 900px) {
-  .sidebar {
+  .sidebar,main {
     display: none;
   }
+
   .mobile_parent {
     display: unset;
     width: 100% !important;
+    position: relative;
   }
 }
