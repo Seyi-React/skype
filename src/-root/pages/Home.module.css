@@ -22,7 +22,7 @@
   flex-grow: 1; /* Allow the main content to grow and take available space */
    position: absolute;
    z-index: 1;
-   margin-left: auto;/* Add padding or styles to the main content as needed */
+   margin-left: 15rem;/* Add padding or styles to the main content as needed */
 }
 
 @media (max-width: 900px) {

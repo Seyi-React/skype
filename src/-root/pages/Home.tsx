@@ -19,7 +19,7 @@ import PostAdd from "./PostAdd/PostAdd";
 
 const Home = (): JSX.Element => {
   const [toggleSideBar, setToggleSidebar] = useState<boolean>(false);
-  const [activeItem, setActiveItem] = useState<string | null>(null);
+  const [activeItem, setActiveItem] = useState<string | null>('Home');
   const [activeComponent, setActiveComponent] = useState<string>("Feed");
 
   const handleSideFunction = () => {
@@ -41,7 +41,10 @@ const Home = (): JSX.Element => {
         <div className={styles.container}>
           <div
             className={styles.sidebar}
-            style={{ width: toggleSideBar ? "100px" : "220px" }}
+            style={{
+              width: toggleSideBar ? "100px" : "220px",
+              backgroundColor: toggleSideBar ? "#1b1f26" : " ",
+            }}
           >
             <div className={styles.sidebar_content}>
               <div
@@ -60,11 +63,14 @@ const Home = (): JSX.Element => {
                   <h6
                     style={{
                       fontWeight: "bold",
-                      color: "navy",
+                      // color: "navy",
                       fontFamily: "Jost",
                       letterSpacing: "2px",
                       fontSize: "13px",
+                      color: toggleSideBar? '#d5dfed' : 'navy'
                     }}
+
+                  
                   >
                     Skype
                   </h6>
@@ -121,7 +127,9 @@ const Home = (): JSX.Element => {
               >
                 <div>
                   <small>
-                    <BiHomeAlt2 size={20} />
+                    <BiHomeAlt2 size={20} style={{
+                      color: toggleSideBar? '#d5dfed' : ''
+                    }} />
                   </small>
                 </div>
                 <div>{toggleSideBar ? "" : <h5>Home</h5>}</div>
@@ -142,7 +150,9 @@ const Home = (): JSX.Element => {
               >
                 <div>
                   <small>
-                    <BiTrendingUp size={20} />
+                    <BiTrendingUp size={20} style={{
+                      color: toggleSideBar? '#d5dfed' : ''
+                    }}  />
                   </small>
                 </div>
                 <div>{toggleSideBar ? "" : <h5>Trends</h5>}</div>
@@ -163,7 +173,9 @@ const Home = (): JSX.Element => {
               >
                 <div>
                   <small>
-                    <AiFillSave size={20} />
+                    <AiFillSave size={20} style={{
+                      color: toggleSideBar? '#d5dfed' : ''
+                    }} />
                   </small>
                 </div>
                 <div>{toggleSideBar ? "" : <h5>Saved Post</h5>}</div>
@@ -185,7 +197,9 @@ const Home = (): JSX.Element => {
               >
                 <div>
                   <small>
-                    <MdOutlinePostAdd size={20} />
+                    <MdOutlinePostAdd size={20} style={{
+                      color: toggleSideBar? '#d5dfed' : ''
+                    }} />
                   </small>
                 </div>
                 <div>{toggleSideBar ? "" : <h5>Post</h5>}</div>
@@ -206,7 +220,9 @@ const Home = (): JSX.Element => {
               >
                 <div>
                   <small>
-                    <MdExplore size={20} />
+                    <MdExplore size={20} style={{
+                      color: toggleSideBar? '#d5dfed' : ''
+                    }} />
                   </small>
                 </div>
                 <div>{toggleSideBar ? "" : <h5>Explore</h5>}</div>
@@ -225,14 +241,18 @@ const Home = (): JSX.Element => {
                 onClick={() => handleItemClick("Log Out")}
               >
                 <small>
-                  <BiLogOut size={20} />
+                  <BiLogOut size={20} style={{
+                      color: toggleSideBar? '#d5dfed' : ''
+                    }} />
                 </small>
                 {toggleSideBar ? "" : <h5>Log out</h5>}
               </div>
             </div>
           </div>
 
-          <main className={styles.main}>
+          <main className={styles.main} style={{
+            marginLeft: toggleSideBar ? '12rem' : '15rem'
+          }}>
             {activeItem === "Home" && <HomeComponent />}
             {activeItem === "Trends" && <TrendsComponent />}
             {activeItem === " Saved Post" && <SavedPostComponent />}
@@ -321,7 +341,7 @@ const Home = (): JSX.Element => {
                   color: activeComponent === "HomeRoute" ? "white" : "",
                   background: activeComponent === "HomeRoute" ? "navy" : "",
                   borderRadius: "10px",
-                  width:'100%'
+                  width: "100%",
                 }}
               />
               <BiTrendingUp
@@ -331,7 +351,7 @@ const Home = (): JSX.Element => {
                   color: activeComponent === "Trending" ? "white" : "",
                   background: activeComponent === "Trending" ? "navy" : "",
                   borderRadius: "10px",
-                  width:'100%'
+                  width: "100%",
                 }}
               />
               <AiFillSave
@@ -341,7 +361,7 @@ const Home = (): JSX.Element => {
                   color: activeComponent === "Save" ? "white" : "",
                   background: activeComponent === "Save" ? "navy" : "",
                   borderRadius: "10px",
-                  width:'100%'
+                  width: "100%",
                 }}
               />
               <MdExplore
@@ -351,7 +371,7 @@ const Home = (): JSX.Element => {
                   color: activeComponent === "ExploreIt" ? "white" : "",
                   background: activeComponent === "ExploreIt" ? "navy" : "",
                   borderRadius: "10px",
-                  width:'100%'
+                  width: "100%",
                 }}
               />
               <MdOutlinePostAdd
@@ -361,7 +381,7 @@ const Home = (): JSX.Element => {
                   color: activeComponent === "PostAdd" ? "white" : "",
                   background: activeComponent === "PostAdd" ? "navy" : "",
                   borderRadius: "10px",
-                  width:'100%',
+                  width: "100%",
                 }}
               />
             </div>
