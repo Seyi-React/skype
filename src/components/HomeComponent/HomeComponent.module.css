@@ -16,9 +16,11 @@
         grid-column-gap: 4rem;
         grid-row-gap: 0px;
         width: 500px;
+         
     }
     .row2 {
-        margin-left: 5rem;
+        margin-left: 2rem;
+        padding-top: 1rem;
     }
     :is(div h2){
         font-size: 2.5rem;
@@ -64,3 +66,25 @@
         letter-spacing: 1px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
     }
+    .report {
+        background-color:  rgb(127, 127, 234); 
+        margin-top: 2rem;
+        border-radius: 8px;
+        padding: 40px;
+        font-family: 'jost',sans-serif;
+        color: white;
+        letter-spacing: 1px;
+        margin-bottom: 2rem;
+    }
+    :is(.report div div ) {
+        margin: 15px;
+    }
+    .report_2 {
+        background-color: #1b1f26;
+        border-radius: 8px;
+        padding: 45px;
+        font-family: 'jost',sans-serif;
+        letter-spacing: 1px;
+        color: white;
+    }
+    
