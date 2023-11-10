@@ -1,3 +1,19 @@
 .trends {
     padding: 3rem 3rem;
+    width: 100%;
+}
+.search_bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100;
+    gap: 7rem;
+    padding-bottom: 3rem;
+}
+.search_notif input {
+   width: 150%;
+   height: 40px;
+   /* background-color: red; */
+  
+   padding: 10px;
 }
