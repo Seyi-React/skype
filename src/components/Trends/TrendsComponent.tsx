@@ -1,7 +1,8 @@
 import { BsPhone } from "react-icons/bs";
-import {FaBusinessTime, FaPager} from 'react-icons/fa'
+import {FaBusinessTime, FaCloudsmith, FaMoneyBillAlt, FaPager, FaVideo} from 'react-icons/fa'
 import styles from "./TrendsComponent.module.css";
 import { IoIosNotificationsOutline, IoLogoDesignernews } from "react-icons/io";
+import { AiFillDatabase } from "react-icons/ai";
 
 const TrendsComponent = () => {
   return (
@@ -51,10 +52,48 @@ const TrendsComponent = () => {
             <small>Marketing Team</small>
           </div>
         </div>
-        <div className={styles.trend}></div>
-        <div className={styles.trend}></div>
-        <div className={styles.trend}></div>
-        <div className={styles.trend}></div>
+        <div className={styles.trend}
+        >
+          
+          <FaMoneyBillAlt size={30} style={{marginBottom:'1rem'}} color='purple'/>
+          <div>
+            <p  style={{fontWeight:'bold'}}>Commerce Checkout</p>
+          </div>
+          <div>
+            <small>Marketing Team</small>
+          </div>
+
+        </div>
+        <div className={styles.trend}>
+
+        <AiFillDatabase size={30} style={{marginBottom:'1rem'}} color='orange'/>
+          <div>
+            <p  style={{fontWeight:'bold'}}>Data Staging</p>
+          </div>
+          <div>
+            <small>Marketing Team</small>
+          </div>
+        </div>
+        <div className={styles.trend}>
+
+        <FaVideo size={30} style={{marginBottom:'1rem'}} color='blue'/>
+          <div>
+            <p  style={{fontWeight:'bold'}}>Campaign Store</p>
+          </div>
+          <div>
+            <small>Marketing Team</small>
+          </div>
+        </div>
+        <div className={styles.trend}>
+
+         <FaCloudsmith size={30} style={{marginBottom:'1rem'}} color='pink'/>
+          <div>
+            <p  style={{fontWeight:'bold'}}>Acquisition Mitra</p>
+          </div>
+          <div>
+            <small>Marketing Team</small>
+          </div>
+        </div>
       </div>
     </div>
   );
