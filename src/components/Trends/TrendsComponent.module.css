@@ -35,7 +35,7 @@
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 1fr);
         grid-column-gap: 4rem;
-        grid-row-gap: 1rem;
+        grid-row-gap: 3rem;
         width: 100%;
         padding: 2rem 3rem;
 }
