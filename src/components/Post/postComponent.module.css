@@ -13,5 +13,17 @@
 margin-top: 2rem;
   letter-spacing: 1px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  width: 300px;
+  
+}
+.post_lay {
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    padding: 20px;
+    font-family: "jost", sans-serif;
+    width: 100%;
+    margin: 2rem;
 }
