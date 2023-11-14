@@ -12,12 +12,12 @@
   font-family: "jost", sans-serif;
 margin-top: 2rem;
   letter-spacing: 1px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   
 }
 .post_lay {
     border-radius: 5px; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -26,4 +26,5 @@ margin-top: 2rem;
     font-family: "jost", sans-serif;
     width: 100%;
     margin: 2rem;
+    letter-spacing: 1px;
 }

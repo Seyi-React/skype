@@ -238,7 +238,7 @@ const Home = (): JSX.Element => {
                   borderRadius: "10px",
                   padding: "8px",
                 }}
-                onClick={() => handleItemClick("Log Out")}
+                
               >
                 <small>
                   <BiLogOut size={20} style={{
