@@ -1,3 +1,53 @@
 .explore {
     padding: 3rem 3rem;
+    font-family: "jost", sans-serif;
+}
+.top {
+    display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 3rem
+}
+.new {
+    background-color: rgb(27, 207, 147);
+    width: 140px;
+    height: 35px;
+    font-size: 13px;
+    /* color: white; */
+    letter-spacing: 1px;
+}
+.check {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-direction: column;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+.grid {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+.lay {
+    border-radius: 5px;
+    padding: 50px;
+    font-family: "jost", sans-serif;
+    margin-top: 2rem;
+    letter-spacing: 1px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    /* width: 220px; */
+    font-size: 13px;
+}
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
 }
