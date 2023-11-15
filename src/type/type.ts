@@ -4,3 +4,8 @@ export type INewUser = {
     password : string ;
     username : string;
 }
+
+export type ILogout ={
+    onYesClick: () => void;
+    onNoClick: () => void;
+}

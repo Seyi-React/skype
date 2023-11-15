@@ -16,11 +16,18 @@ import Trending from "./Trending/Trending";
 import Save from "./Save/Save";
 import Explore from "./Explore/Explore";
 import PostAdd from "./PostAdd/PostAdd";
+import LogoutModal from "@/components/logoutModal/LogoutModal";
+import { useNavigate } from "react-router-dom";
+// import { useHistory } from 'react-router-dom';
+import about from '../../assets/doctor.jpeg'
+import {AiOutlineLogout} from 'react-icons/ai'
 
 const Home = (): JSX.Element => {
   const [toggleSideBar, setToggleSidebar] = useState<boolean>(false);
   const [activeItem, setActiveItem] = useState<string | null>('Home');
-  const [activeComponent, setActiveComponent] = useState<string>("Feed");
+  const [activeComponent, setActiveComponent] = useState<string>("HomeRoute");
+  const [logout,setLogOut] = useState<boolean>(false)
+  const navigate = useNavigate();
 
   const handleSideFunction = () => {
     setToggleSidebar(!toggleSideBar);
@@ -32,6 +39,16 @@ const Home = (): JSX.Element => {
 
   const handleItemClick = (item: string) => {
     setActiveItem(item);
+  };
+  const handleYesClick = () => {
+    // Handle redirect to /sign-up
+    setLogOut(true)
+    navigate('/sign-up');
+  };
+
+  const handleNoClick = () => {
+    // Close the logout modal
+    setLogOut(false);
   };
 
   return (
@@ -238,7 +255,7 @@ const Home = (): JSX.Element => {
                   borderRadius: "10px",
                   padding: "8px",
                 }}
-                
+                onClick={handleYesClick} 
               >
                 <small>
                   <BiLogOut size={20} style={{
@@ -247,6 +264,7 @@ const Home = (): JSX.Element => {
                 </small>
                 {toggleSideBar ? "" : <h5>Log out</h5>}
               </div>
+             
             </div>
           </div>
 
@@ -260,6 +278,7 @@ const Home = (): JSX.Element => {
             {activeItem === "Explore" && <ExploreComponent />}
           </main>
         </div>
+        {logout && <LogoutModal onYesClick={handleYesClick} onNoClick={handleNoClick} />}
       </>
 
       {/* Mobile dashboard */}
@@ -282,31 +301,32 @@ const Home = (): JSX.Element => {
                 paddingTop: "2rem",
                 paddingLeft: "2rem",
                 paddingBottom: "1rem",
+                gap:'5px'
               }}
             >
               {/* image div */}
               <div>
-                <img src={skypeLogo} alt="logo" width={50} height={40} />
+                <img src={about} alt="logo" width={35} height={25}  style={{borderRadius:'50%'}}/>
               </div>
               {/* Text(skype div) */}
               <div>
                 <h6
                   style={{
                     fontWeight: "bold",
-                    color: "navy",
+                    // color: "navy",
                     fontFamily: "Jost",
-                    letterSpacing: "2px",
-                    fontSize: "17px",
+                    letterSpacing: "1px",
+                    fontSize: "14px",
                   }}
                 >
-                  Skype
+                Hi,Welcome Efe
                 </h6>
               </div>
             </div>
             {/* Notif & Logout div */}
             <div>
               <small>
-                <MdNotifications size={30} style={{ marginTop: "15px" }} />
+                <AiOutlineLogout size={23} style={{ marginTop: "15px" }} />
               </small>
             </div>
           </div>
@@ -335,51 +355,51 @@ const Home = (): JSX.Element => {
               }}
             >
               <BiHomeAlt2
-                size={24}
+                size={26}
                 onClick={() => navigateToComponent("HomeRoute")}
                 style={{
-                  color: activeComponent === "HomeRoute" ? "white" : "",
-                  background: activeComponent === "HomeRoute" ? "navy" : "",
+                  color: activeComponent === "HomeRoute" ? "navy" : "",
+                  // background: activeComponent === "HomeRoute" ? "navy" : "",
                   borderRadius: "10px",
                   width: "100%",
                 }}
               />
               <BiTrendingUp
-                size={24}
+                size={26}
                 onClick={() => navigateToComponent("Trending")}
                 style={{
-                  color: activeComponent === "Trending" ? "white" : "",
-                  background: activeComponent === "Trending" ? "navy" : "",
+                  color: activeComponent === "Trending" ? "navy" : "",
+                  // background: activeComponent === "Trending" ? "navy" : "",
                   borderRadius: "10px",
                   width: "100%",
                 }}
               />
               <AiFillSave
-                size={24}
+                size={26}
                 onClick={() => navigateToComponent("Save")}
                 style={{
-                  color: activeComponent === "Save" ? "white" : "",
-                  background: activeComponent === "Save" ? "navy" : "",
+                  color: activeComponent === "Save" ? "navy" : "",
+                  // background: activeComponent === "Save" ? "navy" : "",
                   borderRadius: "10px",
                   width: "100%",
                 }}
               />
               <MdExplore
-                size={24}
+                size={26}
                 onClick={() => navigateToComponent("ExploreIt")}
                 style={{
-                  color: activeComponent === "ExploreIt" ? "white" : "",
-                  background: activeComponent === "ExploreIt" ? "navy" : "",
+                  color: activeComponent === "ExploreIt" ? "navy" : "",
+                  // background: activeComponent === "ExploreIt" ? "navy" : "",
                   borderRadius: "10px",
                   width: "100%",
                 }}
               />
               <MdOutlinePostAdd
-                size={24}
+                size={26}
                 onClick={() => navigateToComponent("PostAdd")}
                 style={{
-                  color: activeComponent === "PostAdd" ? "white" : "",
-                  background: activeComponent === "PostAdd" ? "navy" : "",
+                  color: activeComponent === "PostAdd" ? "navy" : "",
+                  // background: activeComponent === "PostAdd" ? "navy" : "",
                   borderRadius: "10px",
                   width: "100%",
                 }}
